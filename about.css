@@ -1,4 +1,42 @@
 /* RESET */
+/* 📱 MOBILE FIX */
+@media (max-width: 768px) {
+
+    /* NAVBAR STACK */
+    .dashboard {
+        flex-wrap: wrap;
+        gap: 10px;
+        padding: 10px;
+        top: 10px;
+    }
+
+    .dashboard a {
+        font-size: 13px;
+    }
+
+    /* CONTENT BOX */
+    .content {
+        width: 90%;
+        padding: 20px;
+    }
+
+    /* TEXT SIZE */
+    .content h1 {
+        font-size: 26px;
+    }
+
+    .content p {
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
+    /* CENTER FIX */
+    .container {
+        padding-top: 120px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+}
 * {
     margin: 0;
     padding: 0;
