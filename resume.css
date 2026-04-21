@@ -1,13 +1,13 @@
 body {
     margin: 0;
-    font-family: 'Gilda Display', serif;
+    font-family: 'Lato', 'Gilda Display', serif;
     color: #4d4b44;
-
-    /* background image */
     background-image: url("images/RESUME.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-height: 100vh;
 }
 
 /* CENTER */
@@ -15,79 +15,48 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 40px;
+    padding: 100px 20px 40px 20px;
+    min-height: 100vh;
 }
 
-/* BACK BUTTON */
-.back-btn {
-    display: block;
-    width: fit-content;
-    margin: 0 auto 20px auto;
-
-    padding: 10px 15px;
-
-    text-decoration: none;
-    font-family: 'Lato', sans-serif;
-    color: #4d4b44;
-
-    border: 1px solid #333;
-    background: transparent;
-
-    border-radius: 5px;
-
-    transition: 0.3s;
-}
-
-
-/* ABOUT CARD BUTTON SECTION */
+/* NAVBAR */
 .dashboard {
     position: fixed;
-    top: 20px;
-    right: 20px;
-    left: 20px;
-
+    top: 15px;
+    left: 50%;
+    transform: translateX(-50%);
     display: flex;
-    gap: 10px;
+    gap: 15px;
     flex-wrap: wrap;
-    justify-content: flex-end;
-
-    padding: 12px 15px;
-
-    background: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    border-radius: 15px;
-
+    justify-content: center;
+    padding: 12px 20px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 50px;
     z-index: 1000;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
 }
 
-
+.nav-link,
 .dashboard a {
     text-decoration: none;
-    color: #333;
-    font-size: clamp(12px, 2vw, 20px);
-    transition: 0.3s;
-    padding: 5px 8px;
+    color: #4d4b44;
+    font-size: clamp(12px, 2vw, 15px);
+    font-weight: 500;
+    transition: all 0.3s ease;
+    padding: 8px 12px;
+    border-radius: 8px;
+    position: relative;
 }
 
-/* HOVER EFFECT (underline slide) */
-.dashboard a::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: -4px;
-
-    width: 0%;
-    height: 2px;
-    background: #333;
-
-    transition: 0.3s;
-}
-
-.dashboard a:hover::after {
-    width: 100%;
+.nav-link:hover,
+.dashboard a:hover {
+    color: #77685e;
+    background: rgba(119, 104, 94, 0.1);
+    transform: translateY(-2px);
 }
 
 /* RESUME CARD */
@@ -95,176 +64,67 @@ body {
     width: clamp(90%, 100%, 900px);
     max-width: 900px;
     background: #f3efe2;
-    padding: clamp(20px, 5vw, 40px);
-    border-radius: 10px;
+    padding: clamp(30px, 5vw, 50px);
+    border-radius: 15px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
 }
 
 /* HEADER */
 .resume-header {
     text-align: center;
-    margin-bottom: 30px;
+    margin-bottom: 40px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #77685e;
 }
 
 .resume-header h1 {
     font-family: 'Playfair Display', serif;
-    letter-spacing: 6px;
-    font-size: clamp(28px, 6vw, 40px);
-}
-
-.resume-header p {
-    font-family: 'Lato', sans-serif;
-    color: #555;
-    font-size: clamp(14px, 2.5vw, 16px);
+    letter-spacing: 4px;
+    font-size: clamp(32px, 8vw, 48px);
+    margin: 0;
+    color: #77685e;
+    font-weight: 600;
 }
 
 /* GRID */
 .resume-content {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
+    gap: 25px;
 }
 
-/* BOX STYLE (UPDATED + ANIMATION) */
+/* BOX STYLE */
 .box {
     background: white;
-    padding: 20px;
-    border-radius: 8px;
+    padding: 25px;
+    border-radius: 10px;
     border: 1px solid #ddd;
-
+    border-left: 4px solid #77685e;
     transition: all 0.3s ease;
-    position: relative;
-
- 
-
-.box h2 {
-    font-size: clamp(18px, 4vw, 22px);
-    margin-bottom: 10px;
-}
-
-.box p {
-    font-size: clamp(14px, 2.5vw, 16px);
-    line-height: 1.5;
-}   animation: fadeUp 0.6s ease forwards;
+    animation: fadeUp 0.6s ease forwards;
     opacity: 0;
 }
 
-/* HOVER EFFECT */
 .box:hover {
     transform: translateY(-6px) scale(1.02);
-    box-shadow: 0 15px 30px rgba(0,0,0,0.18);
-    border-left: 5px solid #4d4b44;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+    border-left-color: #d4a574;
 }
 
-/* FADE ANIMATION */
-@keyframes fadeUp {
-    from {
-        opacity: 0;
-        transform: translateY(15px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* TITLES */
 .box h2 {
     font-family: 'Playfair Display', serif;
-    margin-bottom: 10px;
+    font-size: clamp(16px, 4vw, 22px);
+    margin: 0 0 15px 0;
+    color: #77685e;
+    font-weight: 600;
 }
 
-/* TEXT */
 .box p {
     font-family: 'Lato', sans-serif;
+    font-size: clamp(13px, 2.5vw, 16px);
     line-height: 1.6;
-}
-.resume-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-}
-
-/* normal box */
-.box {
-    width: 60%;
-    transition: all 0.4s ease;
-    cursor: pointer;
-}
-
-/* when active (CENTER VIEW) */
-.box.active {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) scale(1.15);
-
-    width: 600px;
-    z-index: 999;
-
-    background: #f3efe2;
-    box-shadow: 0 25px 60px rgba(0,0,0,0.25);
-    border-radius: 10px;
-}body.blur-active::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,0.35);
-    backdrop-filter: blur(6px);
-    z-index: 1;
-}
-
-/* layout */
-.resume-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr; /* 2 columns layout */
-    gap: 15px;
-
-    align-items: start;
-}
-
-/* normal card */
-.box {
-    width: 80%;
-    padding: 20px;
-
-    background: white;
-    border-radius: 10px;
-
-    transition: all 0.4s ease;
-    cursor: pointer;
-
-    position: relative;
-    z-index: 2;
-
-    text-align: left;
-
-    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-}
-/* ACTIVE (center focus but not too big) */
-.box.active {
-    position: fixed;
-    top: 50%;
-    left: 30%;
-    transform: translate(-50%, -50%) scale(1.1);
-
-    width: 650px;
-    max-width: 90%;
-
-    background: #f3efe2;
-    padding: 25px;
-    border-radius: 12px;
-
-    box-shadow: 0 25px 60px rgba(0,0,0,0.35);
-
-    z-index: 10;
-}
-
-/* blur others */
-.box.dim {
-    filter: blur(3px);
-    opacity: 0.3;
-    pointer-events: none;
+    color: #4d4b44;
+    margin: 0;
 }
 /* STAGGER EFFECT */
 .box:nth-child(1) { animation-delay: 0.1s; }
@@ -273,18 +133,35 @@ body {
 .box:nth-child(4) { animation-delay: 0.4s; }
 .box:nth-child(5) { animation-delay: 0.5s; }
 
+/* FADE ANIMATION */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 /* MOBILE RESPONSIVE */
 @media (max-width: 768px) {
     .container {
-        padding: 100px 15px 15px 15px;
+        padding: 90px 15px 30px 15px;
     }
     
     .dashboard {
-        top: auto;
-        bottom: 10px;
-        left: 10px !important;
-        right: 10px !important;
-        justify-content: center;
+        top: 10px;
+        width: auto;
+        max-width: calc(100% - 20px);
+        gap: 8px;
+    }
+    
+    .nav-link,
+    .dashboard a {
+        font-size: 11px;
+        padding: 6px 10px;
     }
     
     .resume-card {
@@ -296,11 +173,6 @@ body {
     }
     
     .box {
-        width: 100%;
-    }
-    
-    .box.active {
-        left: 50% !important;
-        width: 90%;
+        padding: 20px;
     }
 }

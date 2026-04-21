@@ -1,116 +1,152 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     margin: 0;
-    font-family: 'Gilda Display', serif;
+    font-family: 'Lato', 'Gilda Display', serif;
     color: #4d4b44;
-
-    /* background image fix */
     background-image: url("images/PRO.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-attachment: fixed; /* 🔥 keeps background stable */
-
+    background-attachment: fixed;
     min-height: 100vh;
 }
+
 body::before {
     content: "";
     position: fixed;
     inset: 0;
-
-    background: rgba(0, 0, 0, 0.25); /* dark overlay */
+    background: rgba(0, 0, 0, 0.3);
     z-index: -1;
+    pointer-events: none;
 }
 /* NAV DASHBOARD */
 .dashboard {
     position: fixed;
-    top: 20px;
-    right: 20px;
-    left: 20px;
-
+    top: 15px;
+    left: 50%;
+    transform: translateX(-50%);
     display: flex;
-    gap: 10px;
+    gap: 15px;
     flex-wrap: wrap;
-    justify-content: flex-end;
-
-    padding: 12px 15px;
-
-    background: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-
-    border-radius: 15px;
-    border: 1px solid rgba(255,255,255,0.3);
-
+    justify-content: center;
+    padding: 12px 20px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 50px;
     z-index: 1000;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
 }
 
+.nav-link,
 .dashboard a {
     text-decoration: none;
-    color: #f2eddb;
-    font-size: clamp(12px, 2vw, 20px);
-    transition: 0.3s;
-    padding: 5px 8px;
+    color: #4d4b44;
+    font-size: clamp(12px, 2vw, 15px);
+    font-weight: 500;
+    transition: all 0.3s ease;
+    padding: 8px 12px;
+    border-radius: 8px;
+    position: relative;
 }
 
+.nav-link:hover,
 .dashboard a:hover {
-    transform: scale(1.1);
-}
-
-/* MAIN CONTAINER */
-.container {
-    padding: clamp(80px, 15vw, 120px) clamp(15px, 5vw, 40px) 40px;
+    color: #77685e;
+    background: rgba(119, 104, 94, 0.1);
+    transform: translateY(-2px);
+}100px 20px 60px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 /* TITLE */
 .title {
-    font-size: clamp(32px, 10vw, 80px);
+    font-size: clamp(32px, 10vw, 64px);
     text-align: center;
-    margin-bottom: 10px;
-       color: #f2eddb;
+    margin: 0 0 15px 0;
+    color: #f2eddb;
+    font-family: 'Playfair Display', serif;
+    font-weight: 600;
 }
 
 .subtitle {
     text-align: center;
     font-size: clamp(14px, 3vw, 18px);
+    margin: 0 0 50px 0;
+    color: #f2eddb;
+    opacity: 0.9
+    text-align: center;
+    font-size: clamp(14px, 3vw, 18px);
     margin-bottom: 40px;
        color: #f2eddb;
-}
-
-/* PROJECT GRID */
-.projects {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
+}80px, 1fr));
+    gap: 30px;
 }
 
 /* PROJECT CARD */
 .card {
     background: #f3efe2;
-    padding: 20px;
+    padding: 30px;
     border-radius: 12px;
-
-    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-
-    transition: 0.3s ease;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+    border-left: 4px solid #77685e;
 }
 
 .card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+    border-left-color: #d4a574;
 }
 
 .card h2 {
-    margin-bottom: 10px;
-    font-size: clamp(18px, 4vw, 24px);
+    font-size: clamp(16px, 4vw, 22px);
+    margin: 0 0 15px 0;
+    color: #77685e;
+    font-family: 'Playfair Display', serif;
+    font-weight: 600;
 }
 
 .card p {
-    font-size: clamp(14px, 2.5vw, 15px);
-    line-height: 1.5;
-}
-
-/* MOBILE RESPONSIVE */
-@media (max-width: 768px) {
+    font-size: clamp(13px, 2.5vw, 16px);
+    line-height: 1.6;
+    color: #4d4b44;
+    mcontainer {
+        padding: 90px 15px 50px 15px;
+    }
+    
+    .dashboard {
+        top: 10px;
+        width: auto;
+        max-width: calc(100% - 20px);
+        gap: 8px;
+    }
+    
+    .nav-link,
+    .dashboard a {
+        font-size: 11px;
+        padding: 6px 10px;
+    }
+    
+    .projects {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .card {
+        padding: 20
     .dashboard {
         top: auto;
         bottom: 10px;

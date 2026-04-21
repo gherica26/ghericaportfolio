@@ -1,23 +1,54 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     margin: 0;
-    font-family: 'Gilda Display', serif;
+    font-family: 'Lato', 'Gilda Display', serif;
     color: #4d4b44;
-
     background-image: url("images/try.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-height: 100vh;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.02);
+    z-index: -1;
+    pointer-events: none;
 }
 
 /* CENTER WHOLE PAGE */
 .container {
     min-height: 100vh;
     display: flex;
-    flex-direction: column;   /* stack vertically */
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 80px 20px 20px 20px;
+    padding: 100px 20px 40px 20px;
+    gap: 40px;
 }
+
+.hero-section {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
 /* FADE-IN ANIMATION */
 @keyframes fadeUp {
     from {
@@ -29,76 +60,118 @@ body {
         transform: translateY(0);
     }
 }
+
 .image-frame {
-    width: clamp(100px, 20vw, 180px);
-    height: clamp(100px, 20vw, 180px);
-
+    width: clamp(120px, 25vw, 200px);
+    height: clamp(120px, 25vw, 200px);
     border-radius: 50%;
-    border: clamp(4px, 1vw, 8px) solid  #77685e;;
-
+    border: clamp(4px, 1vw, 8px) solid #77685e;
     display: flex;
     align-items: center;
     justify-content: center;
-
-    overflow: hidden; /* keeps image inside circle */
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    animation: fadeUp 1s ease forwards;
 }
+
 /* HERO ANIMATION */
 .profile-card {
     display: flex;
-    align-items: center;  /* keeps image aligned with text */
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
     gap: 30px;
+    width: 100%;
+    animation: fadeUp 0.8s ease forwards;
 }
 
 /* INTRO ANIMATION (delay) */
 .intro {
     text-align: center;
-    margin-top: 0;
-
     animation: fadeUp 1s ease;
-    animation-delay: 0.5s;
+    animation-delay: 0.2s;
     animation-fill-mode: both;
+    width: 100%;
+    max-width: 800px;
 }
 
 /* HELLO TEXT IMPROVED */
 .name {
-    font-size: clamp(40px, 18vw, 240px);
-    font-family: 'Bukaki', serif;
+    font-size: clamp(32px, 12vw, 80px);
+    font-family: 'Playfair Display', serif;
     margin: 0;
-    letter-spacing: clamp(2px, 1vw, 8px);
-     color: #77685e;
-    /* subtle shadow for Canva feel */
-    text-shadow: 2px 4px 10px rgba(0,0,0,0.2);
+    letter-spacing: clamp(1px, 1vw, 4px);
+    color: #77685e;
+    text-shadow: 2px 4px 10px rgba(0, 0, 0, 0.15);
+    font-weight: 600;
 }
 
 /* INTRO TEXT STYLE */
 .intro h2 {
-    font-size: clamp(24px, 6vw, 50px);
-    margin: 5px 0;
-    color: #77685e;;
+    font-size: clamp(24px, 6vw, 48px);
+    margin: 10px 0 20px 0;
+    color: #77685e;
+    font-family: 'Playfair Display', serif;
+    font-weight: 600;
 }
 
 .intro p {
-    font-size: clamp(16px, 4vw, 35px);
-    margin: 5px auto;
-    line-height: 1.6;
-    max-width: 1000px;
-    text-align: center;
+    font-size: clamp(16px, 3.5vw, 24px);
+    margin: 0;
+    line-height: 1.8;
+    color: #4d4b44;
     padding: 0 15px;
 }
+
 /* IMAGE ENHANCEMENT */
 .profile {
     width: 100%;
     height: 100%;
     border-radius: 50%;
     object-fit: cover;
-
-    box-shadow:  #77685e;;
+    display: block;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
 }
-.intro{
-     font-size: clamp(14px, 3vw, 20px);
-    font-family: 'Bukaki', serif;
-    margin: 0;
+
+/* NAVBAR */
+.dashboard {
+    position: fixed;
+    top: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 12px 20px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 50px;
+    z-index: 1000;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+/* LINKS */
+.nav-link,
+.dashboard a {
+    text-decoration: none;
+    color: #4d4b44;
+    font-size: clamp(12px, 2vw, 15px);
+    font-weight: 500;
+    transition: all 0.3s ease;
+    padding: 8px 12px;
+    border-radius: 8px;
+    position: relative;
+}
+
+.nav-link:hover,
+.dashboard a:hover {
+    color: #77685e;
+    background: rgba(119, 104, 94, 0.1);
+    transform: translateY(-2px);
 }
 
 /* MOBILE RESPONSIVE */
@@ -109,73 +182,33 @@ body {
     }
     
     .image-frame {
-        width: 120px;
-        height: 120px;
+        width: 130px;
+        height: 130px;
     }
     
     .container {
-        padding: 100px 15px 15px 15px;
+        padding: 90px 15px 30px 15px;
+        gap: 30px;
     }
     
     .dashboard {
-        top: auto;
-        bottom: 10px;
-        left: 10px !important;
-        right: 10px !important;
-        justify-content: center;
-        gap: 5px;
+        top: 10px;
+        width: auto;
+        max-width: calc(100% - 20px);
+        gap: 8px;
+    }
+    
+    .nav-link,
+    .dashboard a {
+        font-size: 11px;
+        padding: 6px 10px;
     }
     
     .intro {
-        margin-top: 20px;
+        margin-top: 10px;
     }
-}
-/* NAVBAR */
-.dashboard {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    left: 20px;   /* responsive on mobile */
-
-    display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
-    justify-content: flex-end;
-
-    padding: 12px 15px;
-
-    background: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    border-radius: 15px;
-
-    z-index: 1000;
-}
-
-/* LINKS */
-
-.dashboard a {
-    text-decoration: none;
-    color: #333;
-    font-size: clamp(12px, 2vw, 20px);
-    transition: 0.3s;
-    padding: 5px 8px;
-}
-/* HOVER EFFECT */
-.dashboard a::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: -4px;
-
-    width: 0%;
-    height: 2px;
-    background: #333;
-    transition: 0.3s;
-}
-
-.dashboard a:hover::after {
-    width: 100%;
+    
+    .intro h2 {
+        margin: 10px 0 15px 0;
+    }
 }

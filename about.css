@@ -1,116 +1,140 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     margin: 0;
-    font-family: 'Gilda Display', serif;
+    font-family: 'Lato', 'Gilda Display', serif;
     color: #4d4b44;
-
-    /* background image */
     background-image: url("images/about.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-height: 100vh;
 }
 
 .container {
     min-height: 100vh;
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
     align-items: center;
-
-    padding: 80px 20px 20px 20px;
+    padding: 100px 20px 40px 20px;
 }
 
-/* content box on right */
+/* content box */
 .content {
-    max-width: 500px;
+    max-width: 600px;
     text-align: left;
-
-    background: rgba(255, 255, 255, 0.15);
+    background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(10px);
-    padding: 25px;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.8s ease forwards;
+}
 
-    border-radius: 12px;
+.content h1 {
+    font-size: clamp(28px, 8vw, 48px);
+    margin: 0 0 30px 0;
+    color: #77685e;
+    font-family: 'Playfair Display', serif;
+    font-weight: 600;
 }
 
 /* paragraph */
-p {
-    font-size: clamp(14px, 3vw, 20px);
-    line-height: 1.6;
+.content p {
+    font-size: clamp(14px, 3vw, 18px);
+    line-height: 1.8;
     color: #4d4b44;
+    margin-bottom: 20px;
+    text-align: justify;
 }
 
-/* ABOUT CARD BUTTON SECTION */
+/* FADE ANIMATION */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* NAVBAR */
 .dashboard {
     position: fixed;
-    top: 20px;
-    left: 20px;
-    right: 20px;
+    top: 15px;
+    left: 50%;
+    transform: translateX(-50%);
     display: flex;
-    gap: 10px;
+    gap: 15px;
     flex-wrap: wrap;
-    justify-content: flex-end;
-
-    padding: 12px 15px;
-
-    /* GLASS TRANSPARENT EFFECT */
-    background: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    border-radius: 15px;
-
+    justify-content: center;
+    padding: 12px 20px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 50px;
     z-index: 1000;
-
-    /* SMOOTH ANIMATION */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
 }
 
 /* LINKS STYLE */
-
+.nav-link,
 .dashboard a {
     text-decoration: none;
-    color: #333;
-    font-size: clamp(12px, 2vw, 20px);
-    transition: 0.3s;
-    padding: 5px 8px;
+    color: #4d4b44;
+    font-size: clamp(12px, 2vw, 15px);
+    font-weight: 500;
+    transition: all 0.3s ease;
+    padding: 8px 12px;
+    border-radius: 8px;
+    position: relative;
 }
 
-
-/* HOVER EFFECT (underline slide) */
-.dashboard a::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: -4px;
-
-    width: 0%;
-    height: 2px;
-    background: #333;
-
-    transition: 0.3s;
-}
-
-.dashboard a:hover::after {
-    width: 100%;
+.nav-link:hover,
+.dashboard a:hover {
+    color: #77685e;
+    background: rgba(119, 104, 94, 0.1);
+    transform: translateY(-2px);
 }
 
 /* MOBILE RESPONSIVE */
 @media (max-width: 768px) {
     .container {
-        justify-content: center;
-        padding: 100px 20px 20px 20px;
+        padding: 90px 15px 30px 15px;
     }
     
     .content {
-        width: 100%;
+        padding: 30px;
         max-width: 100%;
     }
     
+    .content p {
+        text-align: left;
+    }
+    
     .dashboard {
-        top: auto;
-        bottom: 10px;
-        left: 10px !important;
-        right: 10px !important;
-        justify-content: center;
+        top: 10px;
+        width: auto;
+        max-width: calc(100% - 20px);
+        gap: 8px;
+    }
+    
+    .nav-link,
+    .dashboard a {
+        font-size: 11px;
+        padding: 6px 10px;
     }
 }
