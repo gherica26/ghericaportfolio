@@ -25,11 +25,14 @@ body::before {
     position: fixed;
     top: 20px;
     right: 20px;
+    left: 20px;
 
     display: flex;
-    gap: 20px;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
 
-    padding: 12px 20px;
+    padding: 12px 15px;
 
     background: rgba(255, 255, 255, 0.15);
     backdrop-filter: blur(12px);
@@ -44,8 +47,9 @@ body::before {
 .dashboard a {
     text-decoration: none;
     color: #f2eddb;
-    font-size: 20px;
+    font-size: clamp(12px, 2vw, 20px);
     transition: 0.3s;
+    padding: 5px 8px;
 }
 
 .dashboard a:hover {
@@ -54,12 +58,12 @@ body::before {
 
 /* MAIN CONTAINER */
 .container {
-    padding: 120px 40px 40px;
+    padding: clamp(80px, 15vw, 120px) clamp(15px, 5vw, 40px) 40px;
 }
 
 /* TITLE */
 .title {
-    font-size: 80px;
+    font-size: clamp(32px, 10vw, 80px);
     text-align: center;
     margin-bottom: 10px;
        color: #f2eddb;
@@ -67,7 +71,7 @@ body::before {
 
 .subtitle {
     text-align: center;
-    font-size: 18px;
+    font-size: clamp(14px, 3vw, 18px);
     margin-bottom: 40px;
        color: #f2eddb;
 }
@@ -97,9 +101,25 @@ body::before {
 
 .card h2 {
     margin-bottom: 10px;
+    font-size: clamp(18px, 4vw, 24px);
 }
 
 .card p {
-    font-size: 15px;
+    font-size: clamp(14px, 2.5vw, 15px);
     line-height: 1.5;
+}
+
+/* MOBILE RESPONSIVE */
+@media (max-width: 768px) {
+    .dashboard {
+        top: auto;
+        bottom: 10px;
+        left: 10px !important;
+        right: 10px !important;
+        justify-content: center;
+    }
+    
+    .container {
+        padding: 100px 15px 15px 15px;
+    }
 }

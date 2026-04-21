@@ -16,6 +16,7 @@ body {
     flex-direction: column;   /* stack vertically */
     justify-content: center;
     align-items: center;
+    padding: 80px 20px 20px 20px;
 }
 /* FADE-IN ANIMATION */
 @keyframes fadeUp {
@@ -29,11 +30,11 @@ body {
     }
 }
 .image-frame {
-    width: 180px;
-    height: 180px;
+    width: clamp(100px, 20vw, 180px);
+    height: clamp(100px, 20vw, 180px);
 
     border-radius: 50%;
-    border: 8px solid  #77685e;; /* ← THIS creates the "O" look */
+    border: clamp(4px, 1vw, 8px) solid  #77685e;;
 
     display: flex;
     align-items: center;
@@ -61,10 +62,10 @@ body {
 
 /* HELLO TEXT IMPROVED */
 .name {
-    font-size: 240px;
+    font-size: clamp(40px, 18vw, 240px);
     font-family: 'Bukaki', serif;
     margin: 0;
-    letter-spacing: 8px;
+    letter-spacing: clamp(2px, 1vw, 8px);
      color: #77685e;
     /* subtle shadow for Canva feel */
     text-shadow: 2px 4px 10px rgba(0,0,0,0.2);
@@ -72,17 +73,18 @@ body {
 
 /* INTRO TEXT STYLE */
 .intro h2 {
-    font-size: 50px;
+    font-size: clamp(24px, 6vw, 50px);
     margin: 5px 0;
     color: #77685e;;
 }
 
 .intro p {
-    font-size: 35px;
+    font-size: clamp(16px, 4vw, 35px);
     margin: 5px auto;
     line-height: 1.6;
     max-width: 1000px;
     text-align: center;
+    padding: 0 15px;
 }
 /* IMAGE ENHANCEMENT */
 .profile {
@@ -94,20 +96,53 @@ body {
     box-shadow:  #77685e;;
 }
 .intro{
-     font-size: 20px; /* FIXED (not 350px!) */
+     font-size: clamp(14px, 3vw, 20px);
     font-family: 'Bukaki', serif;
     margin: 0;
+}
+
+/* MOBILE RESPONSIVE */
+@media (max-width: 768px) {
+    .profile-card {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .image-frame {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .container {
+        padding: 100px 15px 15px 15px;
+    }
+    
+    .dashboard {
+        top: auto;
+        bottom: 10px;
+        left: 10px !important;
+        right: 10px !important;
+        justify-content: center;
+        gap: 5px;
+    }
+    
+    .intro {
+        margin-top: 20px;
+    }
 }
 /* NAVBAR */
 .dashboard {
     position: fixed;
     top: 20px;
-    right: 20px;   /* ✅ THIS moves it to top-right */
+    right: 20px;
+    left: 20px;   /* responsive on mobile */
 
     display: flex;
-    gap: 20px;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
 
-    padding: 12px 20px;
+    padding: 12px 15px;
 
     background: rgba(255, 255, 255, 0.15);
     backdrop-filter: blur(12px);
@@ -124,8 +159,9 @@ body {
 .dashboard a {
     text-decoration: none;
     color: #333;
-    font-size: 20px;
+    font-size: clamp(12px, 2vw, 20px);
     transition: 0.3s;
+    padding: 5px 8px;
 }
 /* HOVER EFFECT */
 .dashboard a::after {
