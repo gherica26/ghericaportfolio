@@ -72,40 +72,45 @@ body {
 /* NAVBAR */
 .dashboard {
     position: fixed;
-    top: 15px;
+    top: 20px;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
-    gap: 15px;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding: 12px 20px;
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.5);
-    border-radius: 50px;
+    gap: 20px;
+    padding: 10px 20px;
+
+    background: transparent; /* REMOVE WHITE */
+    border: none;
+    box-shadow: none;
+
     z-index: 1000;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
 }
 
-/* LINKS STYLE */
-.nav-link,
 .dashboard a {
     text-decoration: none;
     color: #4d4b44;
-    font-size: clamp(12px, 2vw, 15px);
-    font-weight: 500;
-    transition: all 0.3s ease;
-    padding: 8px 12px;
-    border-radius: 8px;
+    font-size: 15px;
+    padding: 5px;
     position: relative;
 }
 
-.nav-link:hover,
-.dashboard a:hover {
-    color: #77685e;
-    background: rgba(119, 104, 94, 0.1);
-    transform: translateY(-2px);
+/* hover effect */
+.dashboard a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    width: 0%;
+    height: 2px;
+    background: #77685e;
+    transition: width 0.3s ease;
+}
+
+.dashboard a:hover::after {
+    width: 100%;
+}
+
+/* ACTIVE PAGE (this is what you want 🔥) */
+.dashboard a.active::after {
+    width: 100%;
 }
