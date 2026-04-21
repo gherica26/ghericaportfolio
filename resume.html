@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Gilda+Display&family=Playfair+Display&family=Lato&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="resume.css">
+</head>
+<body>
+
+<div class="container">
+
+    <div class="resume-card">
+
+        <!-- HEADER -->
+        <div class="resume-header">
+            <h1>RESUME</h1>
+
+        </div>
+        
+        <!-- CONTENT -->
+        <div class="resume-content">
+
+    <div class="box">
+    <h2>Objective</h2>
+             <p>
+                         IT student seeking experience in IT support, networking, and web development. 
+                       Passionate about troubleshooting systems and building websites.
+             </p>
+            </div>
+            <div class="box">
+                <h2>Education</h2>
+                <p>Bachelor of Science in Information Technology</p>
+            </div>
+
+            <div class="box">
+                <h2>Skills</h2>
+                <p>HTML • CSS • JavaScript • PHP • Networking</p>
+            </div>
+
+            <div class="box">
+                <h2>Experience</h2>
+                <p>Intern at One Document Corporation</p>
+            </div>
+
+            <div class="box">
+                <h2>Contact</h2>
+                <p>Email: ghericad@email.com</p>
+                <p>Phone: 09707259188</p>
+            </div>
+            
+        </div>
+          
+    </div>
+         <div class="dashboard">
+             <a href="index.html">Home</a>
+             <a href="about.html">About Me</a>
+             <a href="resume.html">Resume</a>
+             <a href="portfolio.html">Portfolio</a>
+             <a href="contact.html">Contact Me</a>
+        </div>  
+</div>
+
+<script>
+const boxes = document.querySelectorAll(".box");
+
+boxes.forEach(box => {
+    box.addEventListener("click", (e) => {
+        e.stopPropagation();
+
+        // enable blur mode
+        document.body.classList.add("blur-active");
+
+        // reset all
+        boxes.forEach(b => {
+            b.classList.remove("active");
+            b.classList.add("dim");
+        });
+
+        // activate clicked
+        box.classList.remove("dim");
+        box.classList.add("active");
+    });
+});
+
+// reset on outside click
+document.addEventListener("click", () => {
+    document.body.classList.remove("blur-active");
+
+    boxes.forEach(b => {
+        b.classList.remove("active", "dim");
+    });
+});
+</script>     
+</body>
+</html>
