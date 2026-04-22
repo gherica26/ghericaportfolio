@@ -262,3 +262,19 @@ body {
         padding: 20px;
     }
 }
+
+/* FOOTER */
+.contact-footer {
+    text-align: center;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.05);
+    margin-top: 40px;
+    border-top: 1px solid #e8dcc8;
+}
+
+.contact-footer p {
+    margin: 0;
+    font-size: 14px;
+    color: #4d4b44;
+    font-family: 'Lato', sans-serif;
+}
