@@ -280,3 +280,9 @@ body {
     color: #4d4b44;
     font-family: 'Lato', sans-serif;
 }
+.contact-wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;   /* STACK vertically */
+    align-items: center;      /* center everything */
+}
