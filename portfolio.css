@@ -139,15 +139,31 @@ body::before {
 @media (max-width: 768px) {
 
     .dashboard {
+        position: fixed;
         top: auto;
         bottom: 10px;
-        left: 10px;
-        right: 10px;
-        transform: none;
+        left: 50%;
+        right: auto;
+        transform: translateX(-50%);
+        width: calc(100% - 20px);
+        max-width: 100%;
+        gap: 8px;
+        flex-wrap: wrap;
+        justify-content: center;
+        background: rgba(255, 255, 255, 0.95);
+        padding: 10px;
+        border-radius: 8px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .dashboard a {
+        font-size: 11px;
+        padding: 6px 8px;
+        white-space: nowrap;
     }
 
     .container {
-        padding: 90px 15px 50px;
+        padding: 90px 15px 80px;
     }
 
     .projects {
