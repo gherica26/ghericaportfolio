@@ -24,11 +24,18 @@ body {
     top: 15px;
     left: 50%;
     transform: translateX(-50%);
+    
     display: flex;
     gap: 30px;
+
+    padding: 12px 25px;
+
+    background: rgba(255, 255, 255, 0.2); /* transparent */
+    backdrop-filter: blur(10px);          /* glass effect */
+    -webkit-backdrop-filter: blur(10px);
+
+    border-radius: 30px;
     z-index: 1000;
-    background: transparent;
-    padding: 10px 20px;
 }
 
 /* NAV LINKS */
