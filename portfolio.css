@@ -29,6 +29,7 @@ body::before {
     background: rgba(0, 0, 0, 0.3);
     z-index: -1;
 }
+
 /* NAVBAR */
 .dashboard {
     position: fixed;
@@ -72,6 +73,7 @@ body::before {
 .dashboard a.active::after {
     width: 100%;
 }
+
 /* MAIN CONTAINER */
 .container {
     padding: 100px 20px 60px;
