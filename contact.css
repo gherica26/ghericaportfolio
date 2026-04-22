@@ -36,6 +36,8 @@ body {
     overflow: hidden;
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
     animation: slideUp 0.6s ease forwards;
+    display: flex;
+    flex-direction: column;
 }
 
 @keyframes slideUp {
@@ -266,15 +268,15 @@ body {
 /* FOOTER */
 .contact-footer {
     text-align: center;
-    padding: 20px;
-    background: rgba(0, 0, 0, 0.05);
-    margin-top: 40px;
+    padding: 15px;
+    background: #f9f7f5;
     border-top: 1px solid #e8dcc8;
+    margin-top: auto;
 }
 
 .contact-footer p {
     margin: 0;
-    font-size: 14px;
+    font-size: 12px;
     color: #4d4b44;
     font-family: 'Lato', sans-serif;
 }
