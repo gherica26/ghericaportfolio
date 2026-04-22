@@ -1,7 +1,5 @@
-/* RESET */
-/* 📱 MOBILE FIX */
+/* 📱 MOBILE RESPONSIVE */
 @media (max-width: 768px) {
-
     /* NAVBAR STACK */
     .dashboard {
         flex-wrap: wrap;
