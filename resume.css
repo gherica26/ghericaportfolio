@@ -21,23 +21,26 @@ body {
 /* NAVBAR */
 .dashboard {
     position: fixed;
-    top: 20px;
+    top: 15px;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
-    gap: 25px;
+    gap: 30px;
     z-index: 1000;
-
-    background: transparent;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 10px 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 /* NAV LINKS */
 .dashboard a {
     text-decoration: none;
     color: #4d4b44;
-    font-size: 15px;
+    font-size: 16px;
     position: relative;
-    padding: 5px;
+    padding: 8px 5px;
+    font-weight: 500;
 }
 
 /* hover line */
