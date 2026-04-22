@@ -6,6 +6,7 @@
         width: auto;
         max-width: calc(100% - 20px);
         gap: 8px;
+        flex-wrap: wrap;
     }
 
     .dashboard a {

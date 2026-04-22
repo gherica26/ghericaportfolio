@@ -58,7 +58,7 @@ body {
 
 .contact-header h1 {
     font-size: clamp(24px, 6vw, 36px);
-    color: white;
+    color: #f2eddb;
     margin: 0 0 10px 0;
     font-family: 'Playfair Display', serif;
     letter-spacing: 2px;
@@ -66,7 +66,7 @@ body {
 }
 
 .contact-header p {
-    color: rgba(255, 255, 255, 0.9);
+    color: #f2eddb;
     font-size: clamp(13px, 2.5vw, 16px);
     margin: 0;
 }
@@ -138,7 +138,7 @@ body {
 .form-box input:focus,
 .form-box textarea:focus {
     border-color: #77685e;
-    background: white;
+    background: #f2eddb;
     box-shadow: 0 0 0 3px rgba(119, 104, 94, 0.1);
 }
 
@@ -238,6 +238,7 @@ body {
         max-width: calc(100% - 20px);
         gap: 8px;
         padding: 8px 12px;
+        flex-wrap: wrap;
     }
     
     .dashboard a {
