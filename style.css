@@ -206,13 +206,16 @@ body::before {
         top: 10px;
         width: auto;
         max-width: calc(100% - 20px);
-        gap: 8px;
+        gap: 12px;
+        padding: 10px 15px;
+        flex-wrap: wrap;
+        justify-content: center;
     }
     
     .nav-link,
     .dashboard a {
         font-size: 11px;
-        padding: 6px 10px;
+        padding: 5px 7px;
     }
     
     .intro {
