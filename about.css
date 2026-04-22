@@ -54,6 +54,7 @@ body {
     background-attachment: fixed;
 }
 
+
 /* NAVBAR */
 .dashboard {
     position: fixed;
@@ -98,8 +99,6 @@ body {
 .dashboard a.active::after {
     width: 100%;
 }
-
-
 /* CENTER CONTENT */
 .container {
     min-height: 100vh;
