@@ -6,12 +6,11 @@
         width: auto;
         max-width: calc(100% - 20px);
         gap: 8px;
-        flex-wrap: wrap;
     }
 
     .dashboard a {
-        font-size: 11px;
-        padding: 6px 10px;
+        font-size: 10px;
+        padding: 6px 8px;
     }
 
     /* CONTENT BOX */
