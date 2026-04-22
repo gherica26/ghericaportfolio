@@ -141,15 +141,16 @@ body::before {
 /* 📱 MOBILE RESPONSIVE */
 @media (max-width: 768px) {
     .dashboard {
-        flex-wrap: wrap;
-        gap: 10px;
-        padding: 10px 15px;
         top: 10px;
+        width: auto;
+        max-width: calc(100% - 20px);
+        gap: 8px;
+        padding: 8px 12px;
     }
 
     .dashboard a {
-        font-size: 13px;
-        padding: 6px 8px;
+        font-size: 11px;
+        padding: 6px 10px;
     }
 
     .container {

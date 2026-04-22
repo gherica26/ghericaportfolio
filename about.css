@@ -2,21 +2,23 @@
 @media (max-width: 768px) {
     /* NAVBAR STACK */
     .dashboard {
-        flex-wrap: wrap;
-        gap: 10px;
-        padding: 10px 15px;
         top: 10px;
+        width: auto;
+        max-width: calc(100% - 20px);
+        gap: 8px;
+        padding: 8px 12px;
     }
 
     .dashboard a {
-        font-size: 13px;
-        padding: 6px 8px;
+        font-size: 11px;
+        padding: 6px 10px;
     }
 
     /* CONTENT BOX */
     .content {
         width: 90%;
         padding: 20px;
+        background: rgba(255, 255, 255, 0.55);
     }
 
     /* TEXT SIZE */
@@ -113,10 +115,10 @@ body {
 /* CONTENT BOX */
 .content {
     max-width: 600px;
-    background: rgba(255, 255, 255, 0.9);
+    background: rgba(255, 255, 255, 0.65);
     padding: 40px;
     border-radius: 15px;
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(8px);
 }
 
 /* TEXT */
