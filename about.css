@@ -131,3 +131,37 @@ body {
         line-height: 1.6;
     }
 }
+/* GALLERY SECTION */
+.gallery {
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.gallery h2 {
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 30px;
+}
+
+/* GRID LAYOUT */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
+    max-width: 900px;
+    margin: auto;
+}
+
+/* IMAGES */
+.gallery-grid img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* HOVER EFFECT */
+.gallery-grid img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
