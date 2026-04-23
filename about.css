@@ -1,6 +1,6 @@
 * {
-    margin: 50px;
-    padding: 110px;
+    margin: 0px;
+    padding: 0px;
     box-sizing: border-box;
 }
 
@@ -132,69 +132,89 @@ body {
         line-height: 1.6;
     }
 }
-/* CENTER THE GALLERY CARD */
-.gallery-container {
-    display: flex;
-    justify-content: center;
-    margin-top: 30px;
-    padding-bottom: 60px;
+/* CAROUSEL WRAPPER */
+.carousel-wrapper {
+    position: relative;
 }
 
-/* SAME STYLE AS ABOUT CARD */
-.gallery-card {
-    max-width: 1100px;
-    width: 95%;
-    background: rgba(255, 255, 255, 0.65);
-    padding: 40px;
-    border-radius: 15px;
-    backdrop-filter: blur(8px);
-    text-align: center;
-}
-
-/* TITLE */
-.gallery-card h2 {
-    margin-bottom: 20px;
-    font-family: 'Playfair Display', serif;
-}
-
-/* GRID */
+/* CAROUSEL SCROLL */
 .about-gallery {
-    column-count: 3;       /* number of columns */
-    column-gap: 20px;
-}
-.img-box {
-    break-inside: avoid;
-    margin-bottom: 20px;
+    display: flex;
+    gap: 15px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    padding-bottom: 10px;
 }
 
-/* IMAGE */
+/* HIDE SCROLLBAR */
+.about-gallery::-webkit-scrollbar {
+    display: none;
+}
+
+/* EACH IMAGE */
+.img-box {
+    flex: 0 0 auto;
+    min-width: 250px;
+    scroll-snap-align: start;
+}
+
+/* IMAGE STYLE (LANDSCAPE) */
 .img-box img {
     width: 100%;
-    height: auto;   /* para natural height (masonry effect) */
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
     border-radius: 10px;
     display: block;
 }
 
 /* HOVER */
 .img-box img:hover {
-    transform: scale(1.08);
+    transform: scale(1.05);
+    transition: 0.3s;
 }
-/* HOVER */
-.img-box:hover img {
-    transform: scale(1.08);
+
+/* ARROW BUTTONS */
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255,255,255,0.6);
+    border: none;
+    font-size: 25px;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 50%;
+    backdrop-filter: blur(5px);
+    z-index: 10;
+    transition: 0.3s;
 }
-.img-box:hover::after {
-    opacity: 1;
+
+.arrow.left {
+    left: -10px;
+}
+
+.arrow.right {
+    right: -10px;
+}
+
+.arrow:hover {
+    background: rgba(255,255,255,0.9);
+    transform: translateY(-50%) scale(1.1);
 }
 @media (max-width: 768px) {
-    .about-gallery {
-        column-count: 2;
+    .img-box {
+        min-width: 80%;
+    }
+
+    .arrow {
+        display: none; /* swipe na lang sa mobile */
     }
 }
 
 @media (max-width: 480px) {
-    .about-gallery {
-        column-count: 1;
+    .img-box {
+        min-width: 90%;
     }
 }
 /* MODAL BACKGROUND */
