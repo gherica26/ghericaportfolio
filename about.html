@@ -56,9 +56,7 @@
                 <div class="img-box">
                     <img src="images/img2.jpg" onclick="openModal(this.src)">
                 </div>
-                <div class="img-box">
-                    <img src="images/img3.jpg" onclick="openModal(this.src)">
-                </div>
+
                 <div class="img-box">
                     <img src="images/img4.jpg" onclick="openModal(this.src)">
                 </div>
@@ -74,9 +72,7 @@
                 <div class="img-box">
                     <img src="images/img8.jpg" onclick="openModal(this.src)">
                 </div>
-                <div class="img-box">
-                    <img src="images/img9.jpg" onclick="openModal(this.src)">
-                </div>
+
                 <div class="img-box">
                     <img src="images/img10.jpg" onclick="openModal(this.src)">
                 </div>
@@ -97,23 +93,10 @@
             <img id="modalImg">
         </div>
     
-
-
-    <script>
-        function openModal(src) {
-            document.getElementById("imgModal").style.display = "block";
-            document.getElementById("modalImg").src = src;
-        }
-
-        function closeModal() {
-            document.getElementById("imgModal").style.display = "none";
-        }
-   </script>
     <!-- IMAGE MODAL -->
 <div id="imgModal" class="modal" onclick="closeModal()">
     <span class="close">&times;</span>
     <img id="modalImg">
-</div>
 <script>
 function openModal(src) {
     const modal = document.getElementById("imgModal");
