@@ -36,10 +36,10 @@
 
        <!-- GALLERY CARD -->
     <div class="gallery-container">
-     <div class="carousel-wrapper">
+        <div class="gallery-card">
 
             <h2>My Gallery</h2>
-             <button class="arrow left" onclick="scrollGallery(-1)">❮</button>
+
             <div class="about-gallery">
                 <div class="img-box">
                     <img src="images/img1.jpg" onclick="openModal(this.src)">
@@ -56,7 +56,7 @@
                 <div class="img-box">
                     <img src="images/img5.jpg" onclick="openModal(this.src)">
                 </div>
-                <div class="img-box">
+                                <div class="img-box">
                     <img src="images/img6.jpg" onclick="openModal(this.src)">
                 </div>
                 <div class="img-box">
@@ -79,7 +79,7 @@
                     <img src="images/img12.jpg" onclick="openModal(this.src)">
                 </div>
             </div>
-              <button class="arrow right" onclick="scrollGallery(1)">❯</button>
+
         </div>
     </div>
 
@@ -88,19 +88,34 @@
             <img id="modalImg">
         </div>
     
+
+
+    <script>
+        function openModal(src) {
+            document.getElementById("imgModal").style.display = "block";
+            document.getElementById("modalImg").src = src;
+        }
+
+        function closeModal() {
+            document.getElementById("imgModal").style.display = "none";
+        }
+   </script>
     <!-- IMAGE MODAL -->
 <div id="imgModal" class="modal" onclick="closeModal()">
     <span class="close">&times;</span>
     <img id="modalImg">
 </div>
 <script>
-function scrollGallery(direction) {
-    const gallery = document.getElementById("gallery");
+function openModal(src) {
+    const modal = document.getElementById("imgModal");
+    const modalImg = document.getElementById("modalImg");
 
-    gallery.scrollBy({
-        left: direction * 300,
-        behavior: "smooth"
-    });
+    modal.classList.add("active");
+    modalImg.src = src;
+}
+
+function closeModal() {
+    document.getElementById("imgModal").classList.remove("active");
 }
 </script>
 </body>
