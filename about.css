@@ -157,36 +157,49 @@ body {
     font-family: 'Playfair Display', serif;
 }
 
-/* GRID */
+/* GRID GALLERY (LIKE YOUR DESIGN) */
 .about-gallery {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 12px;
+    grid-template-columns: repeat(5, 1fr); /* 5 columns */
+    gap: 20px;
 }
 
-/* IMAGE */
+/* IMAGE BOX */
+.img-box {
+    width: 100%;
+}
+
+/* LANDSCAPE IMAGE */
 .img-box img {
     width: 100%;
-    height: 110px;
+    aspect-ratio: 4 / 3; /* same as your screenshot */
     object-fit: cover;
-    border-radius: 10px;
-    cursor: pointer;
+    border-radius: 12px;
+    display: block;
     transition: 0.3s;
 }
 
-/* HOVER */
+/* HOVER EFFECT */
 .img-box img:hover {
-    transform: scale(1.08);
+    transform: scale(1.05);
 }
-/* HOVER */
-.img-box:hover img {
-    transform: scale(1.08);
+/* TABLET */
+@media (max-width: 1024px) {
+    .about-gallery {
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
-.img-box:hover::after {
-    opacity: 1;
-}
+
+/* MOBILE */
 @media (max-width: 768px) {
     .about-gallery {
         grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* SMALL MOBILE */
+@media (max-width: 480px) {
+    .about-gallery {
+        grid-template-columns: 1fr;
     }
 }
