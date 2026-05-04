@@ -36,8 +36,9 @@ body::before {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 100px 20px 40px 20px;
+    padding: 120px 20px 40px 20px;
     gap: 40px;
+    margin-top: 0;
 }
 
 .hero-section {
@@ -136,17 +137,17 @@ body::before {
 /* NAVBAR */
 .dashboard {
     position: fixed;
-    top: 15px;
-    left: 50%;
-    transform: translateX(-50%);
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
     display: flex;
-    gap: 30px;
-    padding: 12px 25px;
-    background: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border-radius: 30px;
+    gap: 40px;
+    padding: 20px 40px;
+    background: #e8dcc8;
     z-index: 1000;
+    justify-content: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 /* NAV LINKS */
@@ -199,13 +200,10 @@ body::before {
     }
     
     .dashboard {
-        top: 10px;
-        width: auto;
-        max-width: calc(100% - 20px);
+        top: 0;
         gap: 12px;
-        padding: 10px 15px;
+        padding: 15px 15px;
         flex-wrap: wrap;
-        justify-content: center;
     }
     
     .nav-link,
