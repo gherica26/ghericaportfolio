@@ -183,10 +183,10 @@ body {
     display: flex;
     gap: 40px;
     padding: 20px 40px;
-    background: #e8dcc8;
+    background: transparent;
     z-index: 1000;
     justify-content: center;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: none;
 }
 
 /* NAV LINKS */
